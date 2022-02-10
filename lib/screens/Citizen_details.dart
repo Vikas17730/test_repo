@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 class CitizenDetails extends StatelessWidget {
@@ -5,7 +7,7 @@ class CitizenDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Column(
+        child: ListView(
           children: [
             Container(
               color: Colors.black87,
@@ -45,11 +47,12 @@ class CitizenDetails extends StatelessWidget {
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                 child: Container(
                   color: Colors.grey.shade200,
-                  height: MediaQuery.of(context).size.height / 4,
+                  height: MediaQuery.of(context).size.height / 3,
                   width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // ignore: prefer_const_constructors
                       Padding(
                         padding:
                             EdgeInsets.symmetric(vertical: 15, horizontal: 15),
@@ -115,12 +118,13 @@ class CitizenDetails extends StatelessWidget {
                               width: MediaQuery.of(context).size.width / 6,
                               color: Colors.black,
                               child: FlatButton(
-                                  onPressed: null,
-                                  child: Text(
-                                    "CALL NOW",
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 10),
-                                  )),
+                                onPressed: null,
+                                child: Text(
+                                  "CALL NOW",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 10),
+                                ),
+                              ),
                             )
                           ],
                         ),
@@ -128,6 +132,88 @@ class CitizenDetails extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Service',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 31,
+                    ),
+                  ),
+                  Text(
+                    'Government Department',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Text(
+                'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos e t accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos accusam et justo duo dolores et ca',
+              ),
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    'Collection Time : 00:00pm',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'Collection Date : DD MM YY',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Time Remaining : 00:00:00',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: TextButton(
+                child: Container(
+                  color: Colors.black,
+                  width: 350,
+                  child: Text(
+                    'SEND VERIFICATION CODE',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+                //color: Colors.black,
+                onPressed: null,
               ),
             ),
           ],
